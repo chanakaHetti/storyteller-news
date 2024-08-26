@@ -1,0 +1,14 @@
+@import './base/variables';
+@import './base/mixins';
+
+@import './components/header';
+@import './components/sideNav';
+@import './components/categoryMenu';
+@import './components/latestStory';
+@import './components/recentStories';
+@import './components/loadMoreButton';
+
+* {
+  margin: 0;
+  padding: 0;
+}
