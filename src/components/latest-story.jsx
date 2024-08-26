@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { timeCalculation } from '@/helpers/time-calculation';
+import { truncateText } from '@/helpers/truncate-text';
 
 const LatestStory = ({ story, selectedCategory }) => {
   const { title, source, content, urlToImage, publishedAt } = story;
@@ -15,6 +16,9 @@ const LatestStory = ({ story, selectedCategory }) => {
       ? 'Breaking News'
       : `Latest ${selectedCategory} News`;
 
+  const maxLength = 80;
+  const truncatedTitle = truncateText(title, maxLength);
+
   return (
     <article className="latest-story">
       <div className="latest-story__news-title">{newsTitle}</div>
@@ -26,7 +30,14 @@ const LatestStory = ({ story, selectedCategory }) => {
         />
       </figure>
       <div className="latest-story__source">{source.name}</div>
-      <h2 className="latest-story__title">{title}</h2>
+      <a
+        className="latest-story__title"
+        href={story.url}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {truncatedTitle}
+      </a>
       <p className="latest-story__summary">{newsContent}</p>
       <div className="latest-story__time">{timeCalculation(publishedAt)}</div>
     </article>

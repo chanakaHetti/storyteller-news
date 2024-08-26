@@ -33,6 +33,7 @@
 
   @include respond-to(mobile) {
     overflow-x: scroll;
+    overflow-y: hidden;
     padding: 5px 16px;
     white-space: nowrap;
   }
