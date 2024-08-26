@@ -14,11 +14,12 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [stories, setStories] = useState([]);
   const [latestStory, setLatestStory] = useState(null);
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     const loadStories = async () => {
       setLoading(true);
-      // const fetchedStories = await fetchNewsByCategory(selectedCategory, 1);
+      // const fetchedStories = await fetchNewsByCategory(selectedCategory, page);
 
       const fetchedStories = [
         {
@@ -165,15 +166,24 @@ export default function Home() {
       console.log(JSON.stringify(fetchedStories));
       setLoading(false);
 
-      setLatestStory(fetchedStories[0]);
-      setStories(fetchedStories.slice(1));
+      if (page === 1) {
+        setLatestStory(fetchedStories[0]);
+        setStories(fetchedStories.slice(1));
+      } else {
+        setStories((prevStories) => [...prevStories, ...fetchedStories]);
+      }
     };
 
     loadStories();
-  }, [selectedCategory]);
+  }, [selectedCategory, page]);
 
   const handleCategoryChange = (category) => {
     setSelectedCategory(category);
+    setPage(1);
+  };
+
+  const handleLoadMore = () => {
+    setPage((prevPage) => prevPage + 1);
   };
 
   return (
@@ -185,7 +195,7 @@ export default function Home() {
       />
       {latestStory && <LatestStory story={latestStory} />}
       <RecentStories stories={stories} />
-      <LoadMoreButton />
+      <LoadMoreButton onLoadMore={handleLoadMore} />
     </div>
   );
 }
