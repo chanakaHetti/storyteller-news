@@ -184,7 +184,7 @@ export default function Home() {
         onSelectCategory={handleCategoryChange}
       />
       {latestStory && <LatestStory story={latestStory} />}
-      <RecentStories />
+      <RecentStories stories={stories} />
       <LoadMoreButton />
     </div>
   );
