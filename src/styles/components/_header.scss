@@ -1,0 +1,92 @@
+.header {
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-color: $background-color;
+  padding: 20px 20px;
+  border-bottom: 1px solid $border-color;
+
+  &__logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    font-size: 24px;
+    font-weight: bold;
+
+    &__text {
+      color: $dark-1-color;
+    }
+
+    &__highlight {
+      color: $dark-1-color;
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    right: 20px;
+    display: flex;
+    align-items: center;
+
+    &__item {
+      color: $dark-1-color;
+      margin-right: 15px;
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+
+      &:hover {
+        color: $red-color;
+        border-color: $red-color;
+      }
+    }
+
+    &__button {
+      background-color: $red-color;
+      color: $background-color;
+      border: none;
+      border-radius: $border-radius;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+
+    &__icon {
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      cursor: pointer;
+      margin-left: 10px;
+      vertical-align: middle;
+      fill: black;
+    }
+  }
+
+  &__toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    left: 20px;
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    &__menu {
+      &__item,
+      &__button {
+        display: none;
+      }
+    }
+
+    &__toggle {
+      display: block;
+    }
+  }
+}
