@@ -1,1 +1,35 @@
+.category-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $background-color;
+  border-bottom: 1px solid $border-color;
+  padding: 10px 0;
 
+  &__item {
+    margin: 0 16px;
+    padding-bottom: 5px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    color: $dark-1-color;
+    cursor: pointer;
+    border-bottom: 1px solid transparent;
+
+    &:hover,
+    &--active {
+      color: $red-color;
+      border-color: $red-color;
+    }
+  }
+
+  @include respond-to(mobile) {
+    overflow-x: scroll;
+    padding: 5px 16px;
+    white-space: nowrap;
+
+    &__item:first-child {
+      margin-left: 230px;
+    }
+  }
+}
