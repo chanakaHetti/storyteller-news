@@ -14,8 +14,7 @@ const RecentStories = ({ stories }) => {
         >
           <img
             className="recent-stories__item__image"
-            // src={story.urlToImage}
-            src="https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-2167483461.jpg?q=w_1015,c_fill/f_webp"
+            src={story.urlToImage || 'https://picsum.photos/200/300'}
             alt={story.title}
           />
           <div className="recent-stories__item__content">
