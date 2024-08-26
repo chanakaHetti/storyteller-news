@@ -27,7 +27,7 @@ const Header = () => {
           />
         </button>
         <div className="header__logo">
-          <Image src="/logo.png" alt="News Logo" width={170} height={20} />
+          <Image src="/logo.png" alt="News Logo" width={215} height={22} />
         </div>
         <div className="header__menu">
           <a className="header__menu__item" href="#">

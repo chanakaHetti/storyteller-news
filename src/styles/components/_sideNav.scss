@@ -31,6 +31,10 @@
     padding: 0;
     margin: 0;
 
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+
     li {
       margin-bottom: 20px;
     }
@@ -38,7 +42,6 @@
     a {
       text-decoration: none;
       color: black;
-      font-size: 16px;
       border-bottom: 2px solid transparent;
 
       &:hover {
@@ -51,8 +54,8 @@
       background-color: $red-color;
       color: $background-color;
       border: none;
-      padding: 10px 20px;
-      border-radius: $border-radius;
+      border-radius: $border-radius-2;
+      padding: 4px 16px;
       cursor: pointer;
     }
   }
@@ -62,7 +65,7 @@
   }
 }
 
-@media (min-width: 769px) {
+@include respond-to(desktop) {
   .side-nav {
     display: none;
   }
