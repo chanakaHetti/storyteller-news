@@ -1,19 +1,23 @@
 export const CATEGORIES = [
   {
     key: 'top-headlines',
-    title: 'Top headlines',
+    title: 'Top Headlines',
   },
   {
     key: 'business',
     title: 'Business',
   },
   {
-    key: 'Entertainment',
-    title: 'entertainment',
+    key: 'entertainment',
+    title: 'Entertainment',
   },
   {
     key: 'general',
     title: 'General',
+  },
+  {
+    key: 'health',
+    title: 'Health',
   },
   {
     key: 'science',
