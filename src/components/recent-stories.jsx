@@ -4,19 +4,22 @@ import { formatDate } from '@/helpers/date-format';
 
 const RecentStories = ({ stories }) => {
   return (
-    <div className="recent-stories">
+    <section className="recent-stories">
       {stories.map((story, index) => (
-        <div
+        <article
           key={index}
           className={`recent-stories__item ${
             index % 2 === 0 ? 'recent-stories__item--reverse' : ''
           }`}
         >
-          <img
-            className="recent-stories__item__image"
-            src={story.urlToImage || 'https://picsum.photos/200/300'}
-            alt={story.title}
-          />
+          <figure>
+            <img
+              className="recent-stories__item__image"
+              src={story.urlToImage || '/news-dummy.jpg'}
+              alt={story.title}
+            />
+          </figure>
+
           <div className="recent-stories__item__content">
             <div className="recent-stories__item__source">
               {story.source.name}
@@ -26,9 +29,9 @@ const RecentStories = ({ stories }) => {
               {story.author} . {formatDate(story.publishedAt)}
             </div>
           </div>
-        </div>
+        </article>
       ))}
-    </div>
+    </section>
   );
 };
 

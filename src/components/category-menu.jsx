@@ -5,7 +5,7 @@ import { CATEGORIES } from '@/constants/categories';
 const CategoryMenu = ({ selectedCategory, onSelectCategory }) => {
   return (
     <div className="category">
-      <div className="category-menu">
+      <nav className="category-menu" aria-label="Category Menu">
         {CATEGORIES.map((category) => (
           <div
             key={category.key}
@@ -19,7 +19,7 @@ const CategoryMenu = ({ selectedCategory, onSelectCategory }) => {
             {category.title}
           </div>
         ))}
-      </div>
+      </nav>
     </div>
   );
 };

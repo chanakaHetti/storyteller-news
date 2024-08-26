@@ -18,6 +18,7 @@ const Header = () => {
           className="header__toggle"
           onClick={toggleSideNav}
           aria-label="Toggle side navigation"
+          aria-expanded={isSideNavOpen}
         >
           <Image
             src="/Frame 35.png"
