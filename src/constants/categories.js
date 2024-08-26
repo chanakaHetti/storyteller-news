@@ -32,3 +32,7 @@ export const CATEGORIES = [
     title: 'Technology',
   },
 ];
+
+export const CATEGORY_KEYS = CATEGORIES.map((category) => category.key).filter(
+  (key) => key !== 'top-headlines'
+);
