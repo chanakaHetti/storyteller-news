@@ -1,14 +1,22 @@
-.category-menu {
+.category {
   display: flex;
   justify-content: center;
-  align-items: center;
-  background-color: $background-color;
+  padding: 16px 0;
+  width: 100%;
   border-bottom: 1px solid $border-color;
-  padding: 10px 0;
+}
+
+.category-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 662px;
+  height: 21px;
+
+  background-color: $background-color;
 
   &__item {
-    margin: 0 16px;
-    padding-bottom: 5px;
     font-size: 14px;
     font-weight: 400;
     line-height: 21px;
@@ -27,9 +35,5 @@
     overflow-x: scroll;
     padding: 5px 16px;
     white-space: nowrap;
-
-    &__item:first-child {
-      margin-left: 230px;
-    }
   }
 }
